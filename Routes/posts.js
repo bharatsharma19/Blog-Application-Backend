@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Post = require("../Models/Post");
 
-// Create Post
+// Create a Post
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
   try {
@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Update Post
+// Update existing Post
 router.put("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
